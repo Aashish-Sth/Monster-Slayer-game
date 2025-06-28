@@ -3,20 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vue Basics</title>
+    <title>Moster Slayer</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" href="resources/dino.png" />
     <link rel="stylesheet" href="styles.css" />
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="app.js" defer></script>
   </head>
   <body>
-    <header>
-      <h1>Monster Slayer</h1>
-    </header>
     <div id="game">
+      <div class="tutorial" v-show="visible">
+        <div class="instructions">
+          <h1 class="tutorialHead">Tutorial</h1>
+          <ol>
+            <li>
+              Special attack deals hefty damage but has a cool down of 2 turns.
+            </li>
+            <li>
+              Using heal restores your hp and can only be used after 3 turns
+              once used.
+            </li>
+            <li>Surrendering will make you exit the current fight.</li>
+          </ol>
+          <button @click="tutorialDone" class="tutorialButt">
+            Understood!
+          </button>
+        </div>
+      </div>
+      <header>
+        <h1>Monster Slayer</h1>
+      </header>
+
       <section id="monster" class="container">
         <h2>Monster Health</h2>
         <div class="healthbar">

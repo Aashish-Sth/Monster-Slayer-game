@@ -12,7 +12,8 @@ const obj={
         spAtckCD:0,
         healCD:0,
         winner:null,
-        log:[]
+        log:[],
+        visible:true,
         }
     },
     methods:{
@@ -85,6 +86,11 @@ const obj={
             this.playerHp=0;
             this.log.unshift("You can’t go on. The battle ends here.")
         },
+        tutorialDone()
+        {
+            this.visible = !this.visible
+            
+        }
     },
     watch:{
         playerHp(value)
